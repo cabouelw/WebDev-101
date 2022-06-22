@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="stayle.css">
+	<title>Exchange Rte Calculator</title>
+</head>
+<body>
+	<img src="img/money.png" alt="" class="money-img">
+	<h1>Exchange Rte Calculator</h1>
+	<p>Choose the currency and the amounts to get the exchange rate</p>
+
+	<div class="container">
+		<div class="currency">
+			<select id="currency-one">
+				<option value="AED">AED</option>
+				<option value="ARS">ARS</option>
+				<option value="AUD">AUD</option>
+				<option value="BGN">BGN</option>
+				<option value="BGL">BGL</option>
+				<option value="BSD">BSD</option>
+				<option value="CAD">CAD</option>
+				<option value="CHF">CHF</option>
+				<option value="CLP">CLP</option>
+				<option value="CNY">CNY</option>
+				<option value="COP">COP</option>
+				<option value="CZK">CZK</option>
+				<option value="DKK">DKK</option>
+				<option value="DOP">DOP</option>
+				<option value="EGP">EGP</option>
+				<option value="EUR">EUR</option>
+				<option value="FJD">FJD</option>
+				<option value="GTQ">GTQ</option>
+				<option value="HKD">HKD</option>
+				<option value="HRK">HRK</option>
+				<option value="HUF">HUF</option>
+				<option value="USD" selected>USD</option>
+				<!-- ....and mooore -->
+			</select>
+			<input type="number"  id="amount-one" placeholder="0" value="1">
+		</div>
+
+		<div class="swap-rate-container">
+			<button class="btn" id="rate">
+				swap
+			</button>
+			<div class="rate" id="rate"></div>
+		</div>
+
+		<div class="currency">
+            <select id="currency-two">
+                <option value="AED">AED</option>
+                <option value="ARS">ARS</option>
+                <option value="AUD">AUD</option>
+                <option value="BGN">BGN</option>
+                <option value="BGL">BGL</option>
+                <option value="BSD">BSD</option>
+                <option value="CAD">CAD</option>
+                <option value="CHF">CHF</option>
+                <option value="CLP">CLP</option>
+                <option value="CNY">CNY</option>
+                <option value="COP">COP</option>
+                <option value="CZK">CZK</option>
+                <option value="DKK">DKK</option>
+                <option value="DOP">DOP</option>
+                <option value="EGP">EGP</option>
+                <option value="EUR" selected>EUR</option>
+                <option value="FJD">FJD</option>
+                <option value="GTQ">GTQ</option>
+                <option value="HKD">HKD</option>
+                <option value="HRK">HRK</option>
+                <option value="HUF">HUF</option>
+                <option value="USD">USD</option>
+                <!-- ....and mooore -->
+            </select>
+            <input type="number"  id="amount-two" placeholder="0">
+
+        </div>
+	</div>
+	<script src="app.js"></script>
+</body>
+</html>
