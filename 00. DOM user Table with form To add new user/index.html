@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Users</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div class="tab-container">
+		<table id="table-usrs">
+			<tr id="head-tab">
+				<th>ID</th>
+				<th>Date de creation</th>
+				<th>Etat</th>
+				<th>Nom</th>
+				<th>Prenom</th>
+				<th>Nom d'utilisateur</th>
+				<th>Mattricule</th>
+				<th>Action</th>
+			</tr>
+		</table>
+	</div>
+	<div class="user-container" id="user-container">
+		<div class="container-btnAdd" id="container-btnAdd">
+			<input type="button" id="addBtn" class="btnAdd" value="Ajouter utilisateur" />
+		</div>
+		<div class="formUser Heddin" id="formUser">
+			<form class="form-AddUser" id="form-AddUser">
+				<h1>Ajout d'utilisateurs</h1>
+				<div class="inptAll one">
+					<div class="ctn-input">
+						<label for="inpt-Nom">Nom</label>
+						<input type="text" name="inpt-Nom" id="inpt-Nom">
+					</div>
+					<div class="ctn-input">
+						<label for="inpt-Prenom">Prenom</label>
+						<input type="text" name="inpt-Prenom" id="inpt-Prenom">
+					</div>
+					<div class="ctn-input">
+						<label for="inpt-Etat">Etat</label>
+						<input type="text" name="inpt-Etat" id="inpt-Etat">
+					</div>
+					<div class="ctn-input">
+						<label for="inpt-NomUtilisateur">Nom d'utilisateur</label>
+						<input type="text" name="inpt-NomUtilisateur" id="inpt-NomUtilisateur">
+					</div>
+					<div class="ctn-input">
+						<label for="inpt-Date">Date de creation</label>
+						<input type="text" placeholder="dd/mm/yyyy" name="inpt-Date" id="inpt-Date">
+					</div>
+				</div>
+				<div class="inptAll two">
+					<div class="ctn-input">
+						<label for="inpt-Matricule">Matricule</label>
+						<input type="number" name="inpt-Matricule" id="inpt-Matricule">
+					</div>
+				</div>
+				<div class="container-btnsave">
+					<input type="button" value="Enregister" class="save-btn" id="save-btn">
+				</div>
+			</form>
+		</div>
+	</div>
+	<script src="app.js"></script>
+</body>
+
+</html>
