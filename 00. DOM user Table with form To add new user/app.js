@@ -151,8 +151,3 @@ btnSave.addEventListener('click', () => {
 	updateList();
 	updateTable();
 });
-
-// Matricule.addEventListener('input', (e) => {
-// 	console.log(e.target.value);
-// 	// if (e.target.value[e.target.value.length -1] > )
-// })
