@@ -75,7 +75,7 @@ function resetInput()
 	inptDate.value = '';
 }
 
-function updateList() {
+function addUserToList() {
 	let date = new Date(inptDate.value);
 	let user = {
 		id: `${Math.round(Math.random() * 100000000) + 900000000}`,
@@ -86,15 +86,39 @@ function updateList() {
 		userName: NomUtilisateur.value,
 		registrationNumber: Matricule.value,
 	};
-	resetInput();
 	users.push(user);
+	resetInput();
+}
+
+function addUserToTable() {
+	const user = users[users.length - 1];
+	let tr = document.createElement('tr');
+	for (let key of Object.keys(user))
+	{
+		let td = document.createElement('td');
+		if (key === 'status')
+			td.innerHTML = `<div class="${user.status}">${user.status}</div>`;
+		else if (key === 'createdDate')
+		{
+			let date = new Date(user[key]);
+			td.innerText = date.toLocaleDateString();
+		}
+		else
+			td.innerText = user[key];
+		tr.appendChild(td);
+	}
+	let td = document.createElement('td');
+	let img = document.createElement('img');
+	img.src = './trash.png';
+	img.id = user.id;
+	img.classList.add('img');
+	td.appendChild(img);
+	tr.appendChild(td);
+	table.appendChild(tr);
 }
 
 function updateTable()
 {
-	while (table.rows.length > 1) {
-		table.removeChild(table.rows[1]);
-	}
 	users.forEach((user) => {
 		let tr = document.createElement('tr');
 		for (let key of Object.keys(user))
@@ -118,7 +142,6 @@ function updateTable()
 		img.classList.add('img');
 		td.appendChild(img);
 		tr.appendChild(td);
-		tr.classList.add('remove');
 		table.appendChild(tr);
 	});
 }
@@ -136,10 +159,11 @@ table.addEventListener('click', (e) => {
 	if (e.target.classList.value !== 'img')
 		return;
 	for( var i = 0; i < users.length; i++){
-		if ( users[i].id === e.target.id)
-			users.splice(i, 1); 
+		if (users[i].id === e.target.id) {
+			users.splice(i, 1);
+			table.removeChild(table.rows[i + 1]);
+		}
 	}
-	updateTable();
 });
 
 btnSave.addEventListener('click', () => {
@@ -148,6 +172,6 @@ btnSave.addEventListener('click', () => {
 	cntAddBtn.classList.toggle('Heddin');
 	form.classList.toggle('Heddin');
 	userContainer.classList.toggle('expand');
-	updateList();
-	updateTable();
+	addUserToList();
+	addUserToTable();
 });
